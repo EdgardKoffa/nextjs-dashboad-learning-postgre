@@ -3,6 +3,7 @@ import Image from "next/image";
 import InvoiceStatus from "./status";
 import { formatCurrency } from "@/app/lib/utils";
 import { DeleteInvoice, UpdateInvoice } from "./buttons";
+import { fetchFilteredInvoices } from "@/app/lib/data";
 
 export default async function Table({
   query,
@@ -12,7 +13,7 @@ export default async function Table({
   currentPage: number;
 }) {
   const search = JSON.stringify({ query, currentPage });
-
+/* 
   const invoiceRes = await fetch(
     `http://localhost:3000/api/invoices/${search}`,
     {
@@ -20,9 +21,9 @@ export default async function Table({
       cache: "no-store",
       next: { tags: ["InvoicesTable"] },
     }
-  );
+  ); */
 
-  let invoices: InvoicesTable[] = await invoiceRes.json();
+  let invoices: InvoicesTable[] = await fetchFilteredInvoices(query,currentPage) //invoiceRes.json();
   //console.log(invoices);
   return (
     <div className="mt-6 flow-root">

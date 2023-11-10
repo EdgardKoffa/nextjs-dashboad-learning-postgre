@@ -3,15 +3,16 @@ import { Revenue } from "@/types";
 import React from "react";
 import { lusitana } from "@/app/ui/font";
 import { CalendarIcon } from "@heroicons/react/24/outline";
+import { fetchRevenue } from "@/app/lib/data";
 
 export default async function RevenueChart() {
 
-  const revenueRes = await fetch("http://localhost:3000/api/revenue", {
+ /*  const revenueRes = await fetch("http://localhost:3000/api/revenue", {
     method: "GET",
     cache: "no-store",
     next: { tags: ["revenue"] },
-  });
-  const revenue: Revenue[] = await revenueRes.json();
+  }); */
+  const revenue: Revenue[] = await fetchRevenue() //revenueRes.json();
   
   const chartHeight = 350;
 

@@ -3,16 +3,17 @@ import { lusitana } from "@/app/ui/font";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { clsx } from "clsx";
+import { fetchLatestInvoices } from "@/app/lib/data";
 
 export default async function LatestInvoices() {
-  
+  /* 
   const latestIvoiceRes = await fetch("http://localhost:3000/api/invoices", {
     method: "GET",
     cache: "no-store",
     next: { tags: ["latestInvoice"] },
   });
-
-  const latestInvoices: LatestInvoice[] = await latestIvoiceRes.json();
+ */
+  const latestInvoices: LatestInvoice[] = await fetchLatestInvoices()// latestIvoiceRes.json();
   
   return (
     <div className="w-full flex flex-col md:col-span-4">
