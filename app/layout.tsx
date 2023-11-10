@@ -1,5 +1,6 @@
 import '@/app/ui/globals.css'
 import { poppins } from './ui/font';
+import { Children } from '@/types';
 export default function RootLayout({
   children,
 }: Children) {
