@@ -1,7 +1,7 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { lusitana } from "@/app/ui/font";
 import RevenueChart from "@/app/ui/dashboad/revenue-chart";
-import CardsWrapper, { Card } from "@/app/ui/dashboad/cards";
+import CardsWrapper from "@/app/ui/dashboad/cards";
 import LatestInvoices from "@/app/ui/dashboad/latest-invoices";
 import {
   CardsSkeleton,
