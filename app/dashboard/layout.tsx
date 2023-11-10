@@ -1,4 +1,5 @@
 import SideNav from "@/app/ui/dashboad/sidenav";
+import { Children } from "@/types";
 
 export default function layout({ children }: Children) {
   return (
