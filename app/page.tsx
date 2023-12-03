@@ -7,7 +7,7 @@ import AcmeLogo from "@/app/ui/acme-logo";
 export default function Home() {
   
   return (
-    <div className="flex min-h-screen flex-col gap-2 p-6">
+    <div className="flex min-h-screen h-screen flex-col gap-2 p-6">
       <div className="flex h-20 shrink-0 items-center md:items-end rounded-lg bg-blue-600 p-4 md:h-52">
         <AcmeLogo/>
       </div>

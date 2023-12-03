@@ -2,13 +2,12 @@
   "name": "next-dashboad-learning",
   "version": "0.1.0",
   "private": true,
-  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seed":"node -r dotenv/config ./scripts/seed.js"
+    "seed": "node -r dotenv/config ./scripts/seed.js"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
@@ -18,12 +17,17 @@
     "bcrypt": "^5.1.1",
     "clsx": "^2.0.0",
     "mongoose": "^8.0.0",
-    "next": "14.0.1",
+    "next": "^14.0.3",
+    "next-auth": "^5.0.0-beta.3",
+    "pg": "^8.11.3",
     "react": "^18",
     "react-dom": "^18",
+    "save": "^2.9.0",
+    "use-debounce": "^10.0.0",
     "zod": "^3.22.2"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

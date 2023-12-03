@@ -1,7 +1,7 @@
 import { InvoicesTable } from "@/types";
 import Image from "next/image";
 import InvoiceStatus from "./status";
-import { formatCurrency } from "@/app/lib/utils";
+import { formatCurrency, localDateFormat } from "@/app/lib/utils";
 import { DeleteInvoice, UpdateInvoice } from "./buttons";
 import { fetchFilteredInvoices } from "@/app/lib/data";
 
@@ -25,6 +25,12 @@ export default async function Table({
 
   let invoices: InvoicesTable[] = await fetchFilteredInvoices(query,currentPage) //invoiceRes.json();
   //console.log(invoices);
+
+  if(invoices.length===0) return (
+  <div className="mt-10  flex items-center w-full p-4">
+    <h1 className=" text-center w-full text-2xl text-red-500  animate-pulse ">No data matched the searching terms...</h1>
+  </div>) 
+
   return (
     <div className="mt-6 flow-root">
       <div className=" inline-block min-w-full align-middle">
@@ -53,7 +59,7 @@ export default async function Table({
                     <p className=" text-xl font-medium">
                       {formatCurrency(invoice.amount)}{" "}
                     </p>
-                    <p>{invoice.date} </p>
+                    <p>{localDateFormat("fr-FR",invoice.date)} </p>
                   </div>
                   <div className=" flex justify-end gap-2 items-center">
                     <UpdateInvoice id={invoice.id} />
@@ -109,7 +115,7 @@ export default async function Table({
                     {formatCurrency(invoice.amount)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {invoice.date}
+                    {localDateFormat("fr-FR",invoice.date)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
                     <InvoiceStatus status={invoice.status} />
